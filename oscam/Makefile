@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=oscam
-PKG_REV:=r11401
+PKG_REV:=$(shell LC_ALL=C svn info ${PKG_SOURCE_URL} | sed -ne's/^Last Changed Rev: //p') #编译时获取最新源代码
 PKG_VERSION:=1.20-$(PKG_REV)
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_VERSION:=c5b2e655d2948a50bdc5a0db288b10f1955c3bd8
+PKG_SOURCE_VERSION:=$(PKG_REV)
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_URL:=https://github.com/nx111/oscam.git
 PKG_SOURCE:=$(PKG_SOURCE_SUBDIR).tar.bz2
