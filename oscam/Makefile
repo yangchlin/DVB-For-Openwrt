@@ -22,7 +22,7 @@ PKG_USE_MIPS16:=0
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/oscam
+define Package/$(PKG_NAME)/Default
   SECTION:=net
   CATEGORY:=Network
   DEPENDS:=+libopenssl +libusb-1.0 +kmod-usb-serial +kmod-usb-serial-ch341 +kmod-usb-serial-ftdi +kmod-usb-serial-pl2303 +libpcsclite +pcscd +ccid
@@ -30,12 +30,12 @@ define Package/oscam
   URL:=http://www.streamboard.tv/oscam/
 endef
 
-define Package/oscam/description
+define Package/$(PKG_NAME)/description
   OSCam is an Open Source Conditional Access Module software,
   based on the very good MpCS version 0.9d created by ​dukat.
 endef
 
-define Package/oscam/conffiles
+define Package/$(PKG_NAME)/conffiles
 /etc/oscam/
 endef
 
@@ -53,7 +53,7 @@ MAKE_FLAGS += \
 	LEDSUPPORT=1
 
 
-define Package/oscam/install
+define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Distribution/oscam $(1)/usr/bin/oscam
 
