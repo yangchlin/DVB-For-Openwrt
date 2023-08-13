@@ -16,7 +16,7 @@ PKG_SOURCE_URL := https://bitbucket.org/CrazyCat/media_build.git
 PKG_SOURCE_VERSION := d59f3f813cb0d81f05fce3032218c40f6fc6da52
 
 V4L_REPO_URL := https://github.com/crazycat69/linux_media.git
-V4L_REPO_VERSION := 7ae4d8a8273b235d8021de889a1d52f024a2887c
+V4L_REPO_VERSION := 2bc6c387699ed2d37b956875fb97ca78a7b1beb7
 V4L_REPO_NAME := $(shell printf $(V4L_REPO_URL) | awk -F'/' '{sub(/\.git/, "", $$NF); printf $$NF}')
 
 PKG_LICENSE := GPL-2.0
