@@ -22,12 +22,12 @@ PKG_USE_MIPS16:=0
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/$(PKG_NAME)/Default
+define Package/$(PKG_NAME)
   SECTION:=net
   CATEGORY:=Network
-  DEPENDS:=+libopenssl +libusb-1.0 +kmod-usb-serial +kmod-usb-serial-ch341 +kmod-usb-serial-ftdi +kmod-usb-serial-pl2303 +libpcsclite +pcscd +ccid
   TITLE:=OSCam is an Open Source Conditional Access Module software
   URL:=http://www.streamboard.tv/oscam/
+  DEPENDS:=+libopenssl +libusb-1.0 +kmod-usb-serial +kmod-usb-serial-ch341 +kmod-usb-serial-ftdi +kmod-usb-serial-pl2303 +libpcsclite +pcscd +ccid
 endef
 
 define Package/$(PKG_NAME)/description
